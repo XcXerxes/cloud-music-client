@@ -1,0 +1,112 @@
+@import './base/variable';
+@import './base/mixins';
+#app {
+  height: 100%;
+}
+.btn {
+  @extend %btn;
+}
+.btn-primary {
+  width: 100%;
+}
+.btn-disabled {
+  background-color: #ffa39e;
+  cursor: no-drop;
+  &:active {
+    background-color: #ffa39e;
+  }
+}
+
+.cp-container {
+  display: flex;
+  height: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  @at-root {
+    .cp-container__home {
+      flex: 1;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}
+
+
+// tabs
+.cp-container__home {
+  .van-tabs__nav {
+    background-color: #f7f7f9;
+  }
+  .van-tab--active {
+    color: $btn_default_bg;
+  }
+  .van-tabs__nav-bar {
+    background-color: $primary_bg_color;
+  }
+  .van-swipe {
+    img {
+      width: 100%;
+      height: 360px;
+    }
+  }
+}
+
+// border
+.cp-t-1px {
+  position: relative;
+  &::after {
+    @extend %border-1px;
+    top: 0; 
+  }
+}
+.cp-b-1px {
+  position: relative;
+  &::after {
+    @extend %border-1px;
+    bottom: 0; 
+  }
+}
+.cp-all-1px {
+  position: relative;
+  &::after {
+    @extend %border-1px;
+    bottom: 0; 
+  }
+  &::before {
+    @extend %border-1px;
+    top: 0; 
+  }
+}
+
+.cp-flex-50 {
+  flex: 0 1 49%;
+}
+.cp-flex-25 {
+  flex: 0 1 24%;
+}
+.cp-flex-100 {
+  flex: 1;
+}
+.cp-flex-33 {
+  flex: 0 1 33%;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s ease;
+}
+.fade-enter, .fade-leave-active {
+  opacity: 0
+}
+.child-view {
+  position: absolute;
+  transition: all .5s cubic-bezier(.55,0,.2,1);
+}
+.slide-left-enter, .slide-right-leave-active {
+  opacity: 0;
+  transform: translate(50px, 0);
+}
+.slide-left-leave-active, .slide-right-enter {
+  opacity: 0;
+  transform: translate(-50px, 0);
+}

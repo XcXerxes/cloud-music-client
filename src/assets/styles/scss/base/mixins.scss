@@ -1,0 +1,39 @@
+@import './variable';
+%login-input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  height: 70px;
+  border: 2px solid $light_border_color;
+  border-radius: 40px;
+  width: 100%;
+  font-size: 36px;
+  padding-left: 70px;
+  color: #fff;
+}
+
+%btn {
+  display: inline-flex;
+  border: none;
+  outline: none;
+  height: 70px;
+  appearance: none;
+  background-color: $btn_default_bg;
+  border-radius: 40px;
+  align-items: center;
+  justify-content: center;
+  color: $btn_default_color;
+  font-size: 32px;
+  &:active {
+    background-color: rgba($btn_default_bg, .7);
+  }
+}
+
+%border-1px {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  transform: scaleY(.5);
+  background-color: #dad8d8;
+}
